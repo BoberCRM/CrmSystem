@@ -35,4 +35,38 @@
 .flex{
     display: flex;
     flex-direction: column;
+    height:100vh;
+}
+
+
+
+
+/*-----------------------------------------------*/
+
+.block-login{
+    margin: auto auto;
+    max-width: 600px;
+    width: 100%;
+}
+
+.block-login_greeting{
+    margin: 20px auto;
+    text-align: center;
+}
+
+.block-login_form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.button-ex{
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+}
+
+.button-ex span{
+    text-align: center;
+    margin: 15px 0;
 }
