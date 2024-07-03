@@ -1,14 +1,17 @@
-import React from "react";
-import styles from "./input.module.css";
+import React from "react"
+import styles from "./input.module.css"
 
 interface InputProps {
-  type: string;
-  placeholder?: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  label?: string;
-  required?: boolean;
-  disabled?: boolean;
+  type: string
+  placeholder?: string
+  value: string
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  label?: string
+  required?: boolean
+  disabled?: boolean
+  minLength?: number
+  maxLength?: number
+  pattern?: string
 }
 
 const Input: React.FC<InputProps> = ({
@@ -19,6 +22,9 @@ const Input: React.FC<InputProps> = ({
   label,
   required = false,
   disabled = false,
+  minLength,
+  maxLength,
+  pattern
 }) => {
   return (
     <div className={styles.inputContainer}>
@@ -29,11 +35,14 @@ const Input: React.FC<InputProps> = ({
         value={value}
         onChange={onChange}
         className={styles.input}
+        minLength={minLength}
+        maxLength={maxLength}
+        pattern={pattern}
         required={required}
         disabled={disabled}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input
