@@ -1,22 +1,20 @@
 'use client';
 
-import React from 'react';
-import LoginForm from '@/app/login/Login'
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { useAuth } from '@/contexts/AuthContext'
 
-export default function Home() {
+export default function Index() {
+  const { isAuthenticated } = useAuth()
+  const router = useRouter()
 
-  return (
-    <main className="flex">
-      <LoginForm/>
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.push('/home')
+    } else {
+      router.push('/login')
+    }
+  }, [isAuthenticated, router])
 
-        {/* <div className="button-ex">
-          <span>Примеры кнопок:</span>
-
-          <Button onClick={handleClick} variant="primary">Войти</Button>
-          <Button onClick={handleClick} variant="cancel">Отмена</Button>
-          <Button onClick={handleClick} variant="danger">Удалить</Button>
-          <Button onClick={handleClick} variant="create">Добавить</Button>
-        </div> */}
-    </main>
-  )
+  return null // или отображать загрузку или другую информацию
 }
