@@ -45,7 +45,7 @@ const LoginForm: React.FC = () => {
   return (
     <section className={`${styles.page}`}>
       <div className={`${styles.block_login}`}>
-        <h2 className={`${styles.block_login_greeting}`}> Добро пожаловать! </h2>
+        <h2 className={`${styles.block_login_greeting}`}> Авторизация </h2>
         <form className={`${styles.block_login_form}`} onSubmit={handleSubmit}>
           <Input 
             type="text"
@@ -64,7 +64,10 @@ const LoginForm: React.FC = () => {
             maxLength={8}
             label="Пароль"/>  
           {error && <p style={{ color: 'red' }}>{error}</p>}
-          <Button variant="primary">Войти</Button>
+          <div className={`${styles.block_login_form_bottom}`}>
+            <a href="#">Забыл(а) пароль</a>
+            <Button variant="primary">Войти</Button>
+          </div>
         </form>
       </div>
     </section>     
