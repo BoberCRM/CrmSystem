@@ -1,0 +1,35 @@
+  .sidebar_container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #efefef;
+    height:calc(100vh - 180px);
+  }
+
+  .sidebar {
+    margin:  100px 0;
+  }
+
+  .sidebar.sidebarOpen {
+    width: 250px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebarList {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .sidebarListItem{
+    padding: 16px;
+  }
+
+  .sidebarListItemLink{
+    text-decoration: none;
+    color: #333;
+  }
+
+  .sidebarListItemLink:hover {
+    text-decoration: underline;
+  }

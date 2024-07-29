@@ -11,7 +11,7 @@
   .button.primary {
     background-color: #0070f3;
   }
-  
+
   .button.primary:hover {
     background-color: #005bb5;
   }
@@ -38,4 +38,13 @@
   
   .button.create:hover {
     background-color: #148509;
+  }
+
+  .button.circle{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

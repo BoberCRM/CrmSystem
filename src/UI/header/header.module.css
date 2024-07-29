@@ -2,6 +2,7 @@
   background-color: #efefef;
   padding: 15px 20px;
   margin: 0;
+  box-shadow: 1px 3px 15px rgba(0, 0, 9, 0.1);
 }
 
 .header_content{
@@ -12,10 +13,17 @@
 .header_logo{
   border: 1px solid gray;
   width: 85px;
+  height: 85px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 40%;
+  margin-right: 20px;
+}
+
+.header_left{
+  display: flex;
+  align-items: center;
 }
 
 .header_right{
