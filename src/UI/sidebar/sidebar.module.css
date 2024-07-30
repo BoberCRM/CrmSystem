@@ -12,7 +12,7 @@
   }
 
   .sidebar.sidebarOpen {
-    width: 250px;
+    width: 220px;
     transition: transform 0.3s ease-in-out;
   }
 
@@ -23,11 +23,18 @@
 
   .sidebarListItem{
     padding: 16px;
+    display: flex;
+    align-items: center;
   }
+
+  /* .sidebarListItemIcon{
+    margin: 0 10px 0 0;
+  } */
 
   .sidebarListItemLink{
     text-decoration: none;
     color: #333;
+    margin: 0 0 0 10px;
   }
 
   .sidebarListItemLink:hover {

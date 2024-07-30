@@ -36,18 +36,18 @@ export default function Header() {
 
   const [isOpen, setIsOpen] = useState(arrowRight);
 
-  const toggleSidebar = () => {
-    setIsOpen( (prevIcon) => 
-      prevIcon === arrowRight ? arrowLeft : arrowRight
-    );
-    //setIsOpen(!isOpen);
-  };
+  // const toggleSidebar = () => {
+  //   setIsOpen( (prevIcon) => 
+  //     prevIcon === arrowRight ? arrowLeft : arrowRight
+  //   );
+  //   //setIsOpen(!isOpen);
+  // };
     return (
         <header className={`${styles.header}`}>
           <div className={`${styles.header_content}`}>
             <div className={`${styles.header_left}`}>
               <div className={`${styles.header_logo}`}>LOGO</div>
-              <Button onClick={toggleSidebar} type="circle" variant="primary" iconSrc={isOpen}></Button>
+              {/* <Button onClick={toggleSidebar} type="circle" variant="primary" iconSrc={isOpen}></Button> */}
             </div>
             
             <div className={`${styles.header_right}`}>
