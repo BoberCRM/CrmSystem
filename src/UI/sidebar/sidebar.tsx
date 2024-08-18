@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link'
 import Button from '../button/Button';
 import styles from './sidebar.module.css'
 import arrowLeft from './arrowLeft.svg'
@@ -7,6 +8,7 @@ import arrowRight from './arrowRight.svg'
 import HomeIcon from './home.svg';
 import DataIcon from './data.svg'
 import StaticIcon from './statistic.svg'
+import Settings from '@/UI/header/setting.svg'
 
 
 const Sidebar: React.FC = () => {
@@ -25,22 +27,36 @@ const Sidebar: React.FC = () => {
       <div className={`${styles.sidebar} ${isOpen==arrowRight ? styles.sidebarOpen : ''}`}>
         <ul className={styles.sidebarList}>
           <li className={styles.sidebarListItem}>
-            <span className={styles.sidebarListItemIcon}> 
-              <Image src={HomeIcon} height={30} width={30}/>
-            </span>
-            { isOpen == arrowRight && <a href="#" className={styles.sidebarListItemLink}> Главная </a>}
+            <Link href="/home" className={styles.sidebarListItemLink}>
+              <span className={styles.sidebarListItemIcon}> 
+                <Image src={HomeIcon} height={30} width={30}/>
+              </span>
+              { isOpen == arrowRight && <span className={styles.sidebarListItemLink}> Главная </span>}
+            </Link>
           </li>
           <li className={styles.sidebarListItem}>
-            <span className={styles.sidebarListItemIcon}> 
-              <Image src={DataIcon} height={30} width={30}/>
-            </span>
-            { isOpen == arrowRight && <a href="#" className={styles.sidebarListItemLink}>Данные</a>}
+            <Link href="/data" className={styles.sidebarListItemLink}>
+              <span className={styles.sidebarListItemIcon}> 
+                <Image src={DataIcon} height={30} width={30}/>
+              </span>
+              { isOpen == arrowRight && <span className={styles.sidebarListItemLink}>Данные</span>}
+            </Link>
           </li>
           <li className={styles.sidebarListItem}>
-            <span className={styles.sidebarListItemIcon}> 
-              <Image src={StaticIcon} height={30} width={30}/>
-            </span>
-            { isOpen == arrowRight && <a href="#" className={styles.sidebarListItemLink}>Статистика</a>}
+            <Link href="/statistic" className={styles.sidebarListItemLink}>
+              <span className={styles.sidebarListItemIcon}> 
+                <Image src={StaticIcon} height={30} width={30}/>
+              </span>
+              { isOpen == arrowRight && <span className={styles.sidebarListItemLink}>Статистика</span>}
+            </Link>
+          </li>
+          <li className={styles.sidebarListItem}>
+            <Link href="/settings" className={styles.sidebarListItemLink}>
+              <span className={styles.sidebarListItemIcon}> 
+                <Image src={Settings} height={30} width={30}/>
+              </span>
+              { isOpen == arrowRight && <span className={styles.sidebarListItemLink}>Настройки</span>}
+            </Link>
           </li>
         </ul>
       </div>

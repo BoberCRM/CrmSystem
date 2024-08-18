@@ -3,8 +3,8 @@
     align-items: flex-start;
     flex-direction: column;
     padding: 20px;
-    background-color: #efefef;
-    height:calc(100vh - 180px);
+    background-color: #0008cb1a;
+    height:calc(100vh - 150px);
   }
 
   .sidebar {
@@ -35,6 +35,8 @@
     text-decoration: none;
     color: #333;
     margin: 0 0 0 10px;
+    display: flex;
+    align-items: center;
   }
 
   .sidebarListItemLink:hover {

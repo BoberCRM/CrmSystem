@@ -2,17 +2,20 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  background-color: #f0f0f0;
+  background-color: #0008cb1a;
 }
 
 .block_login{
   margin: auto auto;
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
   padding: 50px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .block_login_greeting{
@@ -24,6 +27,7 @@
 .block_login_form{
   display: flex;
   flex-direction: column;
+  width: 400px;
 }
 
 .block_login_form_bottom{

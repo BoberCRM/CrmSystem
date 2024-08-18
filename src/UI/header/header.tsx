@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
+import Image from 'next/image';
 import styles from './header.module.css'
 import Button from '../button/Button'
 import exitIcon  from '@/UI/header/exitIcon.svg'
@@ -10,6 +11,8 @@ import notific from '@/UI/header/notific.svg'
 import noNotific from '@/UI/header/noNotific.svg'
 import arrowLeft from '@/UI/sidebar/arrowLeft.svg'
 import arrowRight from '@/UI/sidebar/arrowRight.svg'
+import user from '@/UI/header/user.png'
+import logotype from '@/UI/header/logo.png'
 
 export default function Header() {
   const { isAuthenticated, logout } = useAuth();
@@ -46,16 +49,23 @@ export default function Header() {
         <header className={`${styles.header}`}>
           <div className={`${styles.header_content}`}>
             <div className={`${styles.header_left}`}>
-              <div className={`${styles.header_logo}`}>LOGO</div>
-              {/* <Button onClick={toggleSidebar} type="circle" variant="primary" iconSrc={isOpen}></Button> */}
+              <Image src={logotype} width={90}/>
             </div>
             
             <div className={`${styles.header_right}`}>
-              <Button variant="info" type="circle"  iconSrc={setting}> </Button>
-              <Button variant="info" type="circle" onClick={switchIcon} iconSrc={currentIcon}> </Button>
+              <div className={`${styles.header_buttons}`}>
+                <Button variant="info" type="circle"  iconSrc={setting}> </Button>
+                <Button variant="info" type="circle" onClick={switchIcon} iconSrc={currentIcon}> </Button>
+              </div>
+
               <div className={`${styles.header_user}`}>
-                <div className={`${styles.header_user_img}`}></div>
-                <div className={`${styles.header_user_name}`}> Иван Иванов</div>
+                <div className={`${styles.header_user_name}`}> 
+                  <span className={`${styles.header_user_name__name}`}>Иван Иванов</span>
+                  <span className={`${styles.header_user_name__role}`}>Пользователь</span>
+                </div>
+                <div className={`${styles.header_user_img}`}>
+                  <Image src={user} width={60}></Image>
+                </div>
               </div>
               <Button variant="danger" type="circle" onClick={logout} iconSrc={exitIcon}> </Button>
             </div>
