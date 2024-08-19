@@ -55,12 +55,9 @@
   margin: 10px 0;
 }
 
-.header_user_img:hover::after{
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  color: #181818;
-  display: block;
+.header_user_img:hover{
+  outline: 3px solid #0301853f; 
+  border-radius: 50px;
 }
 
 .header_user_name{

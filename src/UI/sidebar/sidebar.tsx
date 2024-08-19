@@ -12,13 +12,12 @@ import Settings from '@/UI/header/setting.svg'
 
 
 const Sidebar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(arrowRight);
+  const [isOpen, setIsOpen] = useState(arrowLeft);
 
   const toggleSidebar = () => {
     setIsOpen( (prevIcon) => 
       prevIcon === arrowRight ? arrowLeft : arrowRight
     );
-    //setIsOpen(!isOpen);
   };
 
   return (
@@ -31,7 +30,8 @@ const Sidebar: React.FC = () => {
               <span className={styles.sidebarListItemIcon}> 
                 <Image src={HomeIcon} height={30} width={30}/>
               </span>
-              { isOpen == arrowRight && <span className={styles.sidebarListItemLink}> Главная </span>}
+              {/* { isOpen == arrowRight && <span className={styles.sidebarListItemLink_span}> Главная </span>} */}
+              <span className={styles.sidebarListItemLink_span}> Главная </span>
             </Link>
           </li>
           <li className={styles.sidebarListItem}>
@@ -39,7 +39,8 @@ const Sidebar: React.FC = () => {
               <span className={styles.sidebarListItemIcon}> 
                 <Image src={DataIcon} height={30} width={30}/>
               </span>
-              { isOpen == arrowRight && <span className={styles.sidebarListItemLink}>Данные</span>}
+              {/* { isOpen == arrowRight && } */}
+              <span className={styles.sidebarListItemLink_span}>Данные</span>
             </Link>
           </li>
           <li className={styles.sidebarListItem}>
@@ -47,7 +48,8 @@ const Sidebar: React.FC = () => {
               <span className={styles.sidebarListItemIcon}> 
                 <Image src={StaticIcon} height={30} width={30}/>
               </span>
-              { isOpen == arrowRight && <span className={styles.sidebarListItemLink}>Статистика</span>}
+              {/* { isOpen == arrowRight && } */}
+              <span className={styles.sidebarListItemLink_span}>Статистика</span>
             </Link>
           </li>
           <li className={styles.sidebarListItem}>
@@ -55,7 +57,8 @@ const Sidebar: React.FC = () => {
               <span className={styles.sidebarListItemIcon}> 
                 <Image src={Settings} height={30} width={30}/>
               </span>
-              { isOpen == arrowRight && <span className={styles.sidebarListItemLink}>Настройки</span>}
+              {/* { isOpen == arrowRight && } */}
+              <span className={styles.sidebarListItemLink_span}>Настройки</span>
             </Link>
           </li>
         </ul>
