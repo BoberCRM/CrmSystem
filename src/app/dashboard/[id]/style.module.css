@@ -1,0 +1,15 @@
+/* /app/dashboard/[id]/style.module.css */
+
+.container {
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+.h {
+  color: #333;
+}
+
+.p {
+  font-size: 18px;
+  color: #666;
+}

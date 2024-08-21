@@ -1,0 +1,57 @@
+  .sidebar_container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #0008cb1a;
+    height:calc(100vh - 150px);
+  }
+
+  .sidebar {
+    margin: 100px 0;
+    width: 62px;
+    transition: width 1s cubic-bezier(0, 0.5, 0.5, 1) 0ms;
+    white-space: nowrap; 
+    overflow: hidden
+  }
+
+  .sidebar.sidebarOpen {
+    width: 200px;
+  }
+
+  .sidebarList {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .sidebarListItem{
+    padding: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .sidebarListItemLink{
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+
+  .sidebarListItemLink:hover {
+    text-decoration: underline;
+  }
+
+  .sidebarListItemLink_span{
+      margin-left: 20px;
+  }
+
+
+  
+  .icon_wrapper .icon {
+    fill: #000; /* Начальный цвет SVG */
+    transition: fill 0.3s ease;
+  }
+  
+  .icon_wrapper:hover .icon {
+    fill: #ff0000; /* Цвет SVG при наведении */
+  }

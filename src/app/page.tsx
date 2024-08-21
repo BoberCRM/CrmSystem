@@ -1,20 +1,23 @@
+// /app/page.tsx
+
+// import React from 'react';
+
+// export default function HomePage() {
+//   return (
+//     <div>
+//       <h1>Welcome to the Home Page</h1>
+//       <p>This is the main page of the application.</p>
+//     </div>
+//   );
+// }
+
+
+// src/app/page.tsx
+
 'use client';
 
-import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import { useAuth } from '@/contexts/AuthContext'
+import React from 'react';
 
-export default function Index() {
-  const { isAuthenticated } = useAuth()
-  const router = useRouter()
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      router.push('/home')
-    } else {
-      router.push('/login')
-    }
-  }, [isAuthenticated, router])
-
-  return null // или отображать загрузку или другую информацию
+export default function HomePage() {
+  return <div>Welcome to the Home Page</div>;
 }

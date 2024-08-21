@@ -1,0 +1,106 @@
+/app: Основная директория для страниц и маршрутов, начиная с Next.js 13.
+/assets: Статические файлы, такие как изображения и иконки.
+/components: Переиспользуемые React-компоненты.
+/contexts: Контексты для глобального состояния, например, для аутентификации.
+/hooks: Пользовательские хуки для общих функций.
+/services: Сервисы для API-запросов и других операций.
+/store: Хранилище для глобального состояния приложения.
+/utils: Вспомогательные функции и утилиты.
+/middleware: Функции мидлвейров для обработки запросов или выполнения логики до рендеринга.
+/public: Публичные файлы, доступные напрямую по URL.
+/pages: Страницы приложения в старом стиле, используемые если не используется директория app.
+
+
+
+/src
+│
+├── /app                          # Директория для маршрутизации (Next.js 13+)
+│   ├── /api                      # API роуты (обрабатываются на сервере)
+│   │   ├── /auth
+│   │   │   ├── login.ts
+│   │   │   ├── logout.ts
+│   │   │   └── register.ts
+│   │   ├── /users
+│   │   │   └── [id].ts           # Пример динамического API маршрута
+│   │   └── /middleware.ts        # Мидлвейр для обработки запросов
+│   ├── /auth                     # Страницы авторизации
+│   │   ├── login
+│   │   │   ├── page.tsx
+│   │   │   └── style.module.css
+│   │   ├── register
+│   │   │   ├── page.tsx
+│   │   │   └── style.module.css
+│   │   └── layout.tsx            # Общий layout для auth страниц
+│   ├── /dashboard                # Страницы панели управления
+│   │   ├── /[id]                 # Пример динамического маршрута
+│   │   │   ├── page.tsx
+│   │   │   └── style.module.css
+│   │   ├── page.tsx
+│   │   └── style.module.css
+│   ├── /settings                 # Страницы настроек
+│   │   ├── account
+│   │   │   ├── page.tsx
+│   │   │   └── style.module.css
+│   │   ├── preferences
+│   │   │   ├── page.tsx
+│   │   │   └── style.module.css
+│   │   └── layout.tsx            # Общий layout для настроек
+│   ├── /layout.tsx               # Главный layout приложения
+│   └── /page.tsx                 # Главная страница (Home)
+│
+├── /assets                       # Директория для статических файлов
+│   ├── /images                   # Изображения
+│   │   ├── logo.png
+│   │   └── background.jpg
+│   ├── /icons                    # SVG иконки
+│   │   ├── home.svg
+│   │   └── settings.svg
+│   └── /styles                   # Глобальные стили
+│       ├── globals.css
+│       └── theme.css
+│
+├── /components                   # Повторно используемые компоненты
+│   ├── Button.tsx
+│   ├── Input.tsx
+│   ├── Sidebar.tsx
+│   ├── Header.tsx
+│   └── Footer.tsx
+│
+├── /contexts                     # Контексты для React (например, AuthContext)
+│   ├── AuthContext.tsx
+│   ├── ThemeContext.tsx
+│   └── index.ts
+│
+├── /hooks                        # Пользовательские хуки
+│   ├── useAuth.ts
+│   ├── useTheme.ts
+│   └── useMediaQuery.ts
+│
+├── /services                     # Сервисы для работы с API и другими сервисами
+│   ├── api.ts
+│   ├── authService.ts
+│   └── userService.ts
+│
+├── /store                        # Хранилище для глобального состояния (например, Zustand, Redux)
+│   ├── authStore.ts
+│   ├── userStore.ts
+│   └── index.ts
+│
+├── /utils                        # Вспомогательные функции и утилиты
+│   ├── formatDate.ts
+│   ├── validateEmail.ts
+│   └── index.ts
+│
+├── /middleware                   # Мидлвейры Next.js
+│   ├── auth.ts                   # Мидлвейр для проверки аутентификации
+│   └── logger.ts                 # Мидлвейр для логирования
+│
+├── /public                       # Публичные файлы, доступные напрямую
+│   ├── favicon.ico
+│   └── robots.txt
+│
+└── /pages                        # Директория для страниц (если не используется app/)
+    ├── _app.tsx                  # Компонент обёртка для всех страниц
+    ├── _document.tsx             # Настройки документа (например, HTML-элементы)
+    ├── index.tsx                 # Главная страница
+    └── [...slug].tsx             # Пример динамического маршрута
