@@ -3,13 +3,13 @@ import Image from 'next/image';
 import styles from './button.module.css'
 
 interface ButtonProps {
-    onClick?: () => void
-    children: React.ReactNode
-    disabled?: boolean
-    variant?: 'primary' | 'cancel' | 'danger' | 'create' | 'info'
-    type?: 'circle'
-    iconSrc?: string
-    label?: string
+    onClick?: () => void,
+    children: React.ReactNode,
+    disabled?: boolean,
+    variant?: 'primary' | 'cancel' | 'danger' | 'create' | 'info',
+    type?: 'circle' | 'rect' ,
+    iconSrc?: string,
+    label: string,
 }
 
 const Button: React.FC<ButtonProps> = ({ onClick, children, disabled, type, variant = 'primary', iconSrc, label }) => {

@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react'
-import Button from "@/UI/button/Button"
-import Input from "@/UI/input/Input"
+import Button from "@/components/UI/button/Button"
+import Input from "@/components/UI/input/Input"
 import styles from './login.module.css'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/contexts/AuthContext'
@@ -66,7 +66,7 @@ const LoginForm: React.FC = () => {
           {error && <p style={{ color: 'red' }}>{error}</p>}
           <div className={`${styles.block_login_form_bottom}`}>
             <a href="#">Забыл(а) пароль</a>
-            <Button variant="primary">Войти</Button>
+            <Button variant="primary" type='rect' label={'Войти'}> </Button>
           </div>
         </form>
       </div>

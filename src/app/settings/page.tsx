@@ -3,9 +3,7 @@
 import { useAuth } from '@/contexts/AuthContext';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import Button from "@/UI/button/Button"
-import Header from '@/UI/header/header';
-import Sidebar from '@/UI/sidebar/sidebar';
+import Layout from '../layout';
 
 export default function Setting() {
   const { isAuthenticated, logout } = useAuth();
@@ -22,16 +20,11 @@ export default function Setting() {
   }
 
   return (
-    <div>
-      <Header/>
-      <section className='wrapper'>
-        <Sidebar />
-        <div className="content">
-          <h1>Setting Page</h1>
-          <p>Welcome to the Setting page!</p>
-        </div>
-      </section>
-      <footer/>
-    </div>
+    <Layout>
+      <div>
+        <h1>Home Page</h1>
+        <p>Welcome to the home page!</p>
+      </div>
+    </Layout>
   );
 }

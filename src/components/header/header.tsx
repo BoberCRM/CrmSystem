@@ -1,18 +1,19 @@
+'use client';
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import Image from 'next/image';
 import styles from './header.module.css'
-import Button from '../button/Button'
-import exitIcon  from '@/UI/header/exitIcon.svg'
-import setting from '@/UI/header/setting.svg'
-import notific from '@/UI/header/notific.svg'
-import noNotific from '@/UI/header/noNotific.svg'
-import arrowLeft from '@/UI/sidebar/arrowLeft.svg'
-import arrowRight from '@/UI/sidebar/arrowRight.svg'
-import user from '@/UI/header/user.png'
-import logotype from '@/UI/header/logo.png'
+import Button from '@/components/UI/button/Button'
+import exitIcon  from '@/assets/icons/exitIcon.svg'
+import setting from '@/assets/icons/setting.svg'
+import notific from '@/assets/icons/notific.svg'
+import noNotific from '@/assets/icons/noNotific.svg'
+import arrowLeft from '@/assets/icons/arrowLeft.svg'
+import arrowRight from '@/assets/icons/arrowRight.svg'
+import user from '@/assets/images/user.png'
+import logotype from '@/assets/images/logo.png'
 
 export default function Header() {
   const { isAuthenticated, logout } = useAuth();
@@ -27,7 +28,7 @@ export default function Header() {
   }, [isAuthenticated, router]);
 
   const switchIcon = () => {
-    setCurrentIcon((prevIcon) => 
+    setCurrentIcon((prevIcon:any) => 
       prevIcon === notific ? noNotific : notific
     );
   }
@@ -37,7 +38,7 @@ export default function Header() {
   }
 
 
-  const [isOpen, setIsOpen] = useState(arrowRight);
+  // const [isOpen, setIsOpen] = useState(arrowRight);
 
   // const toggleSidebar = () => {
   //   setIsOpen( (prevIcon) => 
@@ -49,13 +50,13 @@ export default function Header() {
         <header className={`${styles.header}`}>
           <div className={`${styles.header_content}`}>
             <div className={`${styles.header_left}`}>
-              <Image src={logotype} width={90}/>
+              <Image src={logotype} width={90} alt={'text'}/>
             </div>
             
             <div className={`${styles.header_right}`}>
               <div className={`${styles.header_buttons}`}>
-                <Button variant="info" type="circle"  iconSrc={setting}> </Button>
-                <Button variant="info" type="circle" onClick={switchIcon} iconSrc={currentIcon}> </Button>
+                <Button variant="info" type="circle"  iconSrc={setting} label={'text'}> </Button>
+                <Button variant="info" type="circle" onClick={switchIcon} iconSrc={currentIcon} label={'text'}> </Button>
               </div>
 
               <div className={`${styles.header_user}`}>
@@ -64,10 +65,10 @@ export default function Header() {
                   <span className={`${styles.header_user_name__role}`}>Пользователь</span>
                 </div>
                 <div className={`${styles.header_user_img}`}>
-                  <Image src={user} width={60}></Image>
+                  <Image src={user} width={60} alt={'text'}></Image>
                 </div>
               </div>
-              <Button variant="danger" type="circle" onClick={logout} iconSrc={exitIcon}> </Button>
+              <Button variant="danger" type="circle" onClick={logout} iconSrc={exitIcon} label={'text'}> </Button>
             </div>
           </div>
         </header>

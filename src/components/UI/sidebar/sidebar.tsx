@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link'
-import Button from '../button/Button';
+import Button from '../UI/button/Button';
 import styles from './sidebar.module.css'
-import arrowLeft from './arrowLeft.svg'
-import arrowRight from './arrowRight.svg'
-import HomeIcon from './home.svg';
-import DataIcon from './data.svg'
-import StaticIcon from './statistic.svg'
-import Settings from '@/UI/header/setting.svg'
+import arrowLeft from '@/assets/icons/arrowLeft.svg'
+import arrowRight from '@/assets/icons/arrowRight.svg'
+import HomeIcon from '@/assets/icons/home.svg';
+import DataIcon from '@/assets/icons/data.svg'
+import StaticIcon from '@/assets/icons/statistic.svg'
+import Settings from '@/assets/icons/setting.svg'
 
 
 const Sidebar: React.FC = () => {
