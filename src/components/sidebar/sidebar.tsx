@@ -23,13 +23,13 @@ const Sidebar: React.FC = () => {
 
   return (
     <aside className={`${styles.sidebar_container}`}>
-      <Button onClick={toggleSidebar} type="circle" variant="primary" iconSrc={isOpen} label={'text'}>text</Button>
+      <Button onClick={toggleSidebar} type="circle" variant="primary" iconSrc={isOpen} >TEST-TEST</Button>
       <div className={`${styles.sidebar} ${isOpen==arrowRight ? styles.sidebarOpen : ''}`}>
         <ul className={styles.sidebarList}>
           <li className={styles.sidebarListItem}>
             <Link href="/home" className={styles.sidebarListItemLink}>
               <span className={styles.sidebarListItemIcon}> 
-                <Image src={HomeIcon} height={30} width={30} alt={'text'}/>
+                <Image src={HomeIcon} height={30} width={30} alt={'главная'}/>
               </span>
               <span className={styles.sidebarListItemLink_span}> Главная </span>
             </Link>
@@ -37,7 +37,7 @@ const Sidebar: React.FC = () => {
           <li className={styles.sidebarListItem}>
             <Link href="/data" className={styles.sidebarListItemLink}>
               <span className={styles.sidebarListItemIcon}> 
-                <Image src={DataIcon} height={30} width={30} alt={'text'}/>
+                <Image src={DataIcon} height={30} width={30} alt={'данные'}/>
               </span>
               <span className={styles.sidebarListItemLink_span}>Данные </span>
             </Link>
@@ -45,7 +45,7 @@ const Sidebar: React.FC = () => {
           <li className={styles.sidebarListItem}>
             <Link href="/statistic" className={styles.sidebarListItemLink}>
               <span className={styles.sidebarListItemIcon}> 
-                <Image src={StaticIcon} height={30} width={30} alt={'text'}/>
+                <Image src={StaticIcon} height={30} width={30} alt={'статистика'}/>
               </span>
               <span className={styles.sidebarListItemLink_span}>Статистика </span>
             </Link>
@@ -53,7 +53,7 @@ const Sidebar: React.FC = () => {
           <li className={styles.sidebarListItem}>
             <Link href="/settings" className={styles.sidebarListItemLink}>
               <span className={styles.sidebarListItemIcon}> 
-                <Image src={Settings} height={30} width={30} alt={'text'}/>
+                <Image src={Settings} height={30} width={30} alt={'настройки'}/>
               </span>
               <span className={styles.sidebarListItemLink_span}>Настройки </span>
             </Link>

@@ -12,6 +12,7 @@ import notific from '@/assets/icons/notific.svg'
 import noNotific from '@/assets/icons/noNotific.svg'
 import user from '@/assets/images/user.png'
 import logotype from '@/assets/images/logo.png'
+import ThemeToggle from '@/components/UI/toggleTheme/ThemeToggle';
 
 export default function Header() {
   const { isAuthenticated, logout } = useAuth();
@@ -44,13 +45,14 @@ export default function Header() {
         <header className={`${styles.header}`}>
           <div className={`${styles.header_content}`}>
             <div className={`${styles.header_left}`}>
-              <Image src={logotype} width={90} alt={'text'}/>
+              <Image src={logotype} width={90} alt={'логотип'}/>
             </div>
             
             <div className={`${styles.header_right}`}>
               <div className={`${styles.header_buttons}`}>
-                <Button variant="info" type="circle"  iconSrc={setting} label={'text'}> </Button>
-                <Button variant="info" type="circle" onClick={switchIcon} iconSrc={currentIcon} label={'text'}> </Button>
+                <Button variant="info" type="circle"  iconSrc={setting}> </Button>
+                <Button variant="info" type="circle" onClick={switchIcon} iconSrc={currentIcon} > </Button>
+                <ThemeToggle />
               </div>
 
               <div className={`${styles.header_user}`}>
@@ -59,10 +61,10 @@ export default function Header() {
                   <span className={`${styles.header_user_name__role}`}>Пользователь</span>
                 </div>
                 <div className={`${styles.header_user_img}`}>
-                  <Image src={user} width={60} alt={'text'}></Image>
+                  <Image src={user} width={60} alt={'аватар'}></Image>
                 </div>
               </div>
-              <Button variant="danger" type="circle" onClick={exitFunc} iconSrc={exitIcon} label={'text'}>exit</Button>
+              <Button variant="danger" type="circle" onClick={exitFunc} iconSrc={exitIcon}></Button>
             </div>
           </div>
         </header>

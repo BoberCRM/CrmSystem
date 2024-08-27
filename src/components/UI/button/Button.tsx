@@ -4,12 +4,12 @@ import styles from './button.module.css'
 
 interface ButtonProps {
     onClick?: () => void,
-    children: React.ReactNode,
+    children?: React.ReactNode,
     disabled?: boolean,
     variant?: 'primary' | 'cancel' | 'danger' | 'create' | 'info',
     type?: 'circle' | 'rect' ,
     iconSrc?: string,
-    label: string,
+    label?: string | undefined,
 }
 
 const Button: React.FC<ButtonProps> = ({ onClick, children, disabled, type, variant = 'primary', iconSrc, label }) => {

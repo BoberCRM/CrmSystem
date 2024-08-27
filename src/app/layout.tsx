@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { AuthProvider } from '@/contexts/AuthContext';
+import { ThemeProvider } from '@/contexts/ThemeContext';
 import { Inter } from "next/font/google";
 import "@/assets/styles/globals.css";
 
@@ -14,7 +15,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <Head />
       <body>
           <AuthProvider>
-              {children}
+            <ThemeProvider>
+                {children}
+            </ThemeProvider>
           </AuthProvider>
       </body>
     </html>
