@@ -5,7 +5,58 @@
 body{
     padding: 0;
     margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar main";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+}
+
+aside {
+    grid-area: sidebar;
+    overflow-y: auto;
+}
+
+main {
+    grid-area: main;
+    overflow-y: auto;
+}
+
+.sidebar-expanded .container {
+    grid-template-columns: 200px 1fr;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas: 
+        "header"
+        "main"
+        "sidebar";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    aside {
+        padding: 10px;
+        order: 2; /* Размещаем сайдбар после основного контента на мобильных устройствах */
+    }
+    main {
+        order: 1;
+    }
+}
+
 
 .flex{
     display: flex;

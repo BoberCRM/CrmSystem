@@ -1,12 +1,12 @@
 // src/app/head.tsx
 
 import { FC } from 'react';
-// import type { Metadata } from "next";
+import type { Metadata } from "next";
 
-// export const metadata: Metadata = {
-//   title: "Bober CRM",
-//   description: "CRM system",
-// };
+export const metadata: Metadata = {
+  title: "Bober CRM",
+  description: "CRM system",
+};
 
 const Head: FC = () => (
   <>

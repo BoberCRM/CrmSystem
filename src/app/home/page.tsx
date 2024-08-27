@@ -3,7 +3,7 @@
 import { useAuth } from '@/contexts/AuthContext';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import Layout from '@/app/layout';
+import AuthLayout from '@/components/layouts/AuthLayout';
 
 export default function Home() {
   const { isAuthenticated, logout } = useAuth();
@@ -20,12 +20,12 @@ export default function Home() {
   }
 
   return (
-    <Layout>
-      <div>
+    <AuthLayout>
+      <div className="content">
         <h1>Home Page</h1>
         <p>Welcome to the home page!</p>
       </div>
-    </Layout>
+    </AuthLayout>
 
   );
 }

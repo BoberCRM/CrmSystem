@@ -10,8 +10,6 @@ import exitIcon  from '@/assets/icons/exitIcon.svg'
 import setting from '@/assets/icons/setting.svg'
 import notific from '@/assets/icons/notific.svg'
 import noNotific from '@/assets/icons/noNotific.svg'
-import arrowLeft from '@/assets/icons/arrowLeft.svg'
-import arrowRight from '@/assets/icons/arrowRight.svg'
 import user from '@/assets/images/user.png'
 import logotype from '@/assets/images/logo.png'
 
@@ -33,19 +31,15 @@ export default function Header() {
     );
   }
 
+  const exitFunc = () => {
+    router.push('/login');
+  }
+
   if (!isAuthenticated) {
+    
     return null; // или отображать загрузку или другую информацию
   }
 
-
-  // const [isOpen, setIsOpen] = useState(arrowRight);
-
-  // const toggleSidebar = () => {
-  //   setIsOpen( (prevIcon) => 
-  //     prevIcon === arrowRight ? arrowLeft : arrowRight
-  //   );
-  //   //setIsOpen(!isOpen);
-  // };
     return (
         <header className={`${styles.header}`}>
           <div className={`${styles.header_content}`}>
@@ -68,7 +62,7 @@ export default function Header() {
                   <Image src={user} width={60} alt={'text'}></Image>
                 </div>
               </div>
-              <Button variant="danger" type="circle" onClick={logout} iconSrc={exitIcon} label={'text'}> </Button>
+              <Button variant="danger" type="circle" onClick={exitFunc} iconSrc={exitIcon} label={'text'}>exit</Button>
             </div>
           </div>
         </header>

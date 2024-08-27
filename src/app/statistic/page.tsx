@@ -3,7 +3,7 @@
 import { useAuth } from '@/contexts/AuthContext';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import Layout from '../layout';
+import AuthLayout from '@/components/layouts/AuthLayout';
 
 export default function Statistic() {
   const { isAuthenticated, logout } = useAuth();
@@ -20,11 +20,11 @@ export default function Statistic() {
   }
 
   return (
-    <Layout>
+    <AuthLayout>
       <div className="content">
-        <h1>Data Page</h1>
-        <p>Welcome to the data page!</p>
+        <h1>Statistic Page</h1>
+        <p>Welcome to the Statistic page!</p>
       </div>
-    </Layout>
+    </AuthLayout>
   );
 }

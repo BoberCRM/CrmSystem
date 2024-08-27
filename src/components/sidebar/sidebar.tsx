@@ -22,7 +22,7 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <div className={`${styles.sidebar_container}`}>
+    <aside className={`${styles.sidebar_container}`}>
       <Button onClick={toggleSidebar} type="circle" variant="primary" iconSrc={isOpen} label={'text'}>text</Button>
       <div className={`${styles.sidebar} ${isOpen==arrowRight ? styles.sidebarOpen : ''}`}>
         <ul className={styles.sidebarList}>
@@ -31,7 +31,6 @@ const Sidebar: React.FC = () => {
               <span className={styles.sidebarListItemIcon}> 
                 <Image src={HomeIcon} height={30} width={30} alt={'text'}/>
               </span>
-              {/* { isOpen == arrowRight && <span className={styles.sidebarListItemLink_span}> Главная </span>} */}
               <span className={styles.sidebarListItemLink_span}> Главная </span>
             </Link>
           </li>
@@ -40,8 +39,7 @@ const Sidebar: React.FC = () => {
               <span className={styles.sidebarListItemIcon}> 
                 <Image src={DataIcon} height={30} width={30} alt={'text'}/>
               </span>
-              {/* { isOpen == arrowRight && } */}
-              <span className={styles.sidebarListItemLink_span}>Данные</span>
+              <span className={styles.sidebarListItemLink_span}>Данные </span>
             </Link>
           </li>
           <li className={styles.sidebarListItem}>
@@ -49,8 +47,7 @@ const Sidebar: React.FC = () => {
               <span className={styles.sidebarListItemIcon}> 
                 <Image src={StaticIcon} height={30} width={30} alt={'text'}/>
               </span>
-              {/* { isOpen == arrowRight && } */}
-              <span className={styles.sidebarListItemLink_span}>Статистика</span>
+              <span className={styles.sidebarListItemLink_span}>Статистика </span>
             </Link>
           </li>
           <li className={styles.sidebarListItem}>
@@ -58,13 +55,12 @@ const Sidebar: React.FC = () => {
               <span className={styles.sidebarListItemIcon}> 
                 <Image src={Settings} height={30} width={30} alt={'text'}/>
               </span>
-              {/* { isOpen == arrowRight && } */}
-              <span className={styles.sidebarListItemLink_span}>Настройки</span>
+              <span className={styles.sidebarListItemLink_span}>Настройки </span>
             </Link>
           </li>
         </ul>
       </div>
-    </div>
+    </aside>
   );
 };
 
